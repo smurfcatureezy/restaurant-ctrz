@@ -16,6 +16,8 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
+            $table->string('customer_name');
+            $table->integer('table_number');
             $table->integer('sub_total');
             $table->integer('tax')->default(10);
             $table->boolean('is_paid')->nullable();
